@@ -26,6 +26,6 @@ useradd -m gabriel
 echo gabriel:password | chpasswd
 echo "gabriel ALL=(ALL) ALL" >> /etc/sudoers
 
-pacman -S --noconfirm eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-control-center gnome-keyring gnome-shell gnome-system-monitor gnome-weather nautilus gnome-tweaks alacarte tilix firefox discord inkscape gimp nvidia texlive-most base-devel
+pacman -S --noconfirm eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-control-center gnome-keyring gnome-shell gnome-system-monitor gnome-weather nautilus gnome-tweaks alacarte tilix firefox discord inkscape gimp nvidia nvidia-settings texlive-most base-devel
 
 systemctl enable gdm
