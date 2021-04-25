@@ -11,6 +11,7 @@ echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost.localdomain localhost" >> /etc/hosts
 echo "::1 localhost.localdomain localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
+echo root:password | chpasswd
 
 pacman -S --noconfirm grub efibootmgr networkmanager zsh sudo nano intel-ucode ntfs-3g bluez firewalld
 
@@ -26,6 +27,6 @@ useradd -m gabriel
 echo gabriel:password | chpasswd
 echo "gabriel ALL=(ALL) ALL" >> /etc/sudoers
 
-pacman -S --noconfirm eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-control-center gnome-keyring gnome-shell gnome-system-monitor gnome-weather nautilus gnome-tweaks alacarte tilix firefox discord inkscape gimp nvidia texlive-most base-devel
+pacman -S --noconfirm plasma-meta firefox konsole
 
-systemctl enable gdm
+systemctl enable sddm
