@@ -17,14 +17,14 @@ echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 # Instalando pacotes necessários: 
 #   - inicialização do sistema (grub, efibootmgr, ntfs-3g, os-prober);
 #   - gerenciador de internet (networkmanager);
-#   - gerenciador de bluetooth (bluez);
+#   - gerenciador de bluetooth (bluez, bluez-utils);
 #   - firewall (firewalld);
 #   - interpretador de terminal (zsh);
 #   - administrador do sistema (sudo);
 #   - editor de texto via terminal (nano);
 #   - atualização de microcódigo (intel-ucode ou amd-ucode).
 
-pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez firewalld zsh sudo nano intel-ucode 
+pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils firewalld zsh sudo nano intel-ucode 
 
 # Instalando e configurando a incialização do sistema
 
