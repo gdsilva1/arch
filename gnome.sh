@@ -2,8 +2,8 @@
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
-echo "pt_BR.UTF-8 UTF-8" >> /etc/locale.gen
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+sed -i '177s/.//' /etc/locale.gen
+sed -i '393s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
@@ -26,6 +26,18 @@ useradd -m gabriel
 echo gabriel:password | chpasswd
 echo "gabriel ALL=(ALL) ALL" >> /etc/sudoers
 
-pacman -S --noconfirm eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-control-center gnome-keyring gnome-shell gnome-system-monitor gnome-weather nautilus gnome-tweaks alacarte tilix firefox discord inkscape gimp nvidia nvidia-settings texlive-most base-devel
+sed -i '92s/.//' /etc/pacman.conf
+sed -i '93s/.//' /etc/pacman.conf
+pacman -Syu --noconfirm
+
+pacman -S --noconfirm eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-control-center gnome-keyring gnome-shell gnome-system-monitor gnome-weather nautilus gnome-tweaks chrome-gnome-shell alacarte tilix firefox discord steam inkscape freecad nvidia nvidia-settings texlive-most papirus-icon-theme ttf-fira-sans tex-gyre-fonts base-devel
 
 systemctl enable gdm
+
+git clone https://aur.archlinux.org/spotify.git
+cd spotify/
+makepkg -si --noconfirm
+
+git clone https://aur.archlinux.org/vscodium-bin.git
+cd vscodium-bin/
+makepkg -si --noconfirm
