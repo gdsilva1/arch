@@ -33,11 +33,3 @@ pacman -Syu --noconfirm
 pacman -S --noconfirm eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-control-center gnome-keyring gnome-shell gnome-system-monitor gnome-weather nautilus gnome-tweaks chrome-gnome-shell alacarte tilix firefox discord steam inkscape freecad nvidia nvidia-settings texlive-most papirus-icon-theme ttf-fira-sans tex-gyre-fonts base-devel
 
 systemctl enable gdm
-
-git clone https://aur.archlinux.org/spotify.git
-cd spotify/
-makepkg -si --noconfirm
-
-git clone https://aur.archlinux.org/vscodium-bin.git
-cd vscodium-bin/
-makepkg -si --noconfirm
