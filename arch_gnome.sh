@@ -53,7 +53,8 @@ pacman -Syu --noconfirm
 
 # Instalando o GNOME e outros softwares
 
-pacman -S --noconfirm eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-control-center gnome-keyring gnome-shell gnome-system-monitor gnome-weather nautilus gnome-tweaks chrome-gnome-shell alacarte tilix firefox discord steam inkscape freecad nvidia nvidia-settings texlive-most papirus-icon-theme ttf-fira-sans tex-gyre-fonts base-devel
+pacman -S --noconfirm eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-control-center gnome-keyring gnome-shell gnome-system-monitor gnome-weather nautilus gnome-tweaks chrome-gnome-shell alacarte 
+pacman -S --noconfirm tilix firefox discord libappindicator-gtk3 steam inkscape freecad nvidia nvidia-settings texlive-most papirus-icon-theme ttf-fira-sans tex-gyre-fonts neofetch base-devel
 
 # Habilitando a tela de login (GNOME Display Manager)
 
