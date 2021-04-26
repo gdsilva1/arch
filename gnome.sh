@@ -12,7 +12,7 @@ echo "127.0.0.1 localhost.localdomain localhost" >> /etc/hosts
 echo "::1 localhost.localdomain localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 
-pacman -S --noconfirm grub efibootmgr networkmanager zsh sudo nano intel-ucode ntfs-3g bluez firewalld
+pacman -S --noconfirm grub efibootmgr networkmanager zsh sudo nano intel-ucode ntfs-3g os-prober bluez firewalld
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
