@@ -8,7 +8,7 @@ O script arch_gnome.sh configura e instala a interface gráfica GNOME, bem como 
 
 ## Fedora
 
-O script fedora.sh instala repositorios adicionais (RPM Fusion), adiciona o repostirório do Flathub e instala pacotes do dia-a-dia.
+O script fedora_sudo.sh instala repositórios adicionais (RPM Fusion), adiciona o repositório do Flathub (fedora_user.sh) e instala pacotes do dia-a-dia.
 
 ## Debian
 
