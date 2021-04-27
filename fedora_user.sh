@@ -6,8 +6,8 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 # Instalando pacotes em Flatpak
 
-flatpak --user install flathub com.spotify.Client -y
-flatpak --user install flathub com.discordapp.Discord -y
+flatpak install flathub com.spotify.Client -y
+flatpak install flathub com.discordapp.Discord -y
 
 # Adicionando o Oh My Zsh! e Powerlevel10k
 
