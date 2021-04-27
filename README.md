@@ -1,6 +1,6 @@
-# post-installation
+# Scripts para instalação/pós-instalação de sistemas Linux
 
-Scripts para automatizar a instalação (ou pós instalação de determinados sistemas Linux)
+Scripts para automatizar a instalação (ou pós-instalação de determinados sistemas Linux)
 
 ## Arch Linux
 
