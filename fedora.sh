@@ -7,10 +7,10 @@ echo "deltarpm=true" >> /etc/dnf/dnf.conf
 
 # Atualizando o sistema (útil principalmente se a instalação não for feita pela ISO do Fedora Server)
 
-sudo dnf update -y
-sudo dnf upgrade -y
+sudo dnf -y update 
+sudo dnf -y upgrade
 
-# Pacotes do RPM Fusion
+# Adicionando repositório do RPM Fusion
 
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf -y groupupdate core
@@ -29,6 +29,6 @@ flatpak install flathub com.discordapp.Discord -y
 
 # Instalando pacotes do repositório
 
-sudo dnf install steam freecad inkscape gnome-tweaks texlive-scheme-full mozilla-fira-sans-fonts texlive-tex-gyre-doc papirus-icon-theme zsh piper -y
+sudo dnf -y install steam freecad inkscape gnome-tweaks texlive-scheme-full mozilla-fira-sans-fonts texlive-tex-gyre-doc papirus-icon-theme zsh piper
 
 
