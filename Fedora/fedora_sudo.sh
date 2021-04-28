@@ -23,4 +23,8 @@ dnf -y groupupdate sound-and-video
 dnf -y update
 dnf -y install akmod-nvidia steam freecad inkscape gnome-tweaks texlive-scheme-full mozilla-fira-sans-fonts texlive-tex-gyre-doc papirus-icon-theme zsh piper snapd
 
+ln -s /var/lib/snapd/snap /snap
+
+echo "FIM"
+
 
