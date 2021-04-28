@@ -21,6 +21,6 @@ dnf -y groupupdate sound-and-video
 # Instalando pacotes do repositório
 
 dnf -y update
-dnf -y install akmod-nvidia steam freecad inkscape gnome-tweaks texlive-scheme-full mozilla-fira-sans-fonts texlive-tex-gyre-doc papirus-icon-theme zsh piper
+dnf -y install akmod-nvidia steam freecad inkscape gnome-tweaks texlive-scheme-full mozilla-fira-sans-fonts texlive-tex-gyre-doc papirus-icon-theme zsh piper snapd
 
 
