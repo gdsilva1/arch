@@ -25,6 +25,8 @@ dnf -y install akmod-nvidia steam freecad inkscape gnome-tweaks texlive-scheme-f
 
 ln -s /var/lib/snapd/snap /snap
 
+snap install code --classic
+
 echo "FIM"
 
 
