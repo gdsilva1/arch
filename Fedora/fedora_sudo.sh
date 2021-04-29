@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Ativando Fstrim semanalmente
+
+systemctl enable fstrim.timer
+
 # Adicionando respositórios mais rápidos
 
 echo "fastestmirror=true" >> /etc/dnf/dnf.conf
@@ -22,6 +26,8 @@ dnf -y groupupdate sound-and-video
 
 dnf -y update
 dnf -y install akmod-nvidia steam freecad inkscape gnome-tweaks texlive-scheme-full mozilla-fira-sans-fonts texlive-tex-gyre-doc papirus-icon-theme zsh piper snapd
+
+# Link simbólico para habilitar modo --classic dos snaps
 
 ln -s /var/lib/snapd/snap /snap
 
