@@ -4,8 +4,8 @@
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
-sed -i '177s/.//' /etc/locale.gen
-sed -i '393s/.//' /etc/locale.gen
+sed -i '178s/.//' /etc/locale.gen
+sed -i '394s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
@@ -45,10 +45,11 @@ useradd -m gabriel
 echo gabriel:admin | chpasswd
 echo "gabriel ALL=(ALL) ALL" >> /etc/sudoers
 
-# Habilitando o repositório multilib
+# Habilitando o repositório multilib e permitindo múltiplos downloads
 
-sed -i '92s/.//' /etc/pacman.conf
+sed -i '37s/.//' /etc/pacman.conf
 sed -i '93s/.//' /etc/pacman.conf
+sed -i '94s/.//' /etc/pacman.conf
 pacman -Syu --noconfirm
 
 # Instalando o GNOME e outros softwares
