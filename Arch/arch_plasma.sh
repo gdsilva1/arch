@@ -54,9 +54,9 @@ pacman -Syu --noconfirm
 
 # Instalando o PLASMA e outros softwares
 
-pacman -S --noconfirm plasma sddm firefox discord steam inkscape freecad nvidia nvidia-settings texlive-most ttf-fira-sans tex-gyre-fonts neofetch
+pacman -S --noconfirm plasma sddm firefox discord steam inkscape nvidia nvidia-settings texlive-most ttf-fira-sans tex-gyre-fonts neofetch
 
-# Instanlando base-devel para ter acesso ao AUR
+# Instalando base-devel para ter acesso ao AUR
 
 pacman -S --needed --noconfirm base-devel
 
