@@ -60,6 +60,6 @@ pacman -S --noconfirm plasma sddm firefox discord steam inkscape freecad nvidia 
 
 pacman -S --needed --noconfirm base-devel
 
-# Habilitando a tela de login (GNOME Display Manager)
+# Habilitando a tela de login (SDDM)
 
 systemctl enable sddm
