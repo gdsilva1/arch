@@ -24,7 +24,7 @@ echo "127.0.1.1 legion.localdomain legion" >> /etc/hosts
 #   - editor de texto via terminal (nano);
 #   - atualização de microcódigo (intel-ucode ou amd-ucode).
 
-pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils firewalld zsh sudo nano intel-ucode 
+pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils pulseaudio-bluetooth firewalld zsh sudo nano intel-ucode 
 
 # Instalando e configurando a incialização do sistema
 
