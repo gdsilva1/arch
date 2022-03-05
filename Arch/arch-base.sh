@@ -17,7 +17,7 @@ echo "127.0.1.1 legion.localdomain legion" >> /etc/hosts
 # Instalando pacotes necessários: 
 #   - inicialização do sistema (grub, efibootmgr, ntfs-3g, os-prober);
 #   - gerenciador de internet (networkmanager);
-#   - gerenciador de bluetooth (bluez, bluez-utils);
+#   - gerenciador de bluetooth (bluez, bluez-utils, pulseaudio-bluetooth);
 #   - firewall (firewalld);
 #   - interpretador de terminal (zsh);
 #   - administrador do sistema (sudo);
@@ -34,9 +34,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # Habilitando serivços
 
 systemctl enable NetworkManager # Gerenciador de internet
-systemctl enable bluetooth # Gerenciador de bluetooth
-systemctl enable firewalld # Firewall
-systemctl enable fstrim.timer # Manutenção de SSD
+systemctl enable bluetooth      # Gerenciador de bluetooth
+systemctl enable firewalld      # Firewall
+systemctl enable fstrim.timer   # Manutenção de SSD
 
 # Criando usuário e tornando-o administrador do sistema
 # OBS.: a senha padrão será "admin", a qual deverá ser alterada após a completa instalação do sistema
@@ -47,6 +47,7 @@ echo "gabriel ALL=(ALL) ALL" >> /etc/sudoers
 
 # Habilitando o repositório multilib e permitindo múltiplos downloads
 
+sed -i '33s/.//' /etc/pacman.conf
 sed -i '37s/.//' /etc/pacman.conf
 sed -i '93s/.//' /etc/pacman.conf
 sed -i '94s/.//' /etc/pacman.conf
@@ -54,7 +55,7 @@ pacman -Syu --noconfirm
 
 # Instalando softwares
 
-pacman -S --noconfirm firefox discord steam freecad inkscape nvidia nvidia-settings texlive-most ttf-fira-sans tex-gyre-fonts neofetch
+pacman -S --noconfirm firefox discord steam freecad inkscape nvidia nvidia-settings texlive-most tex-gyre-fonts neofetch
 
 # Instalando base-devel para ter acesso ao AUR
 
