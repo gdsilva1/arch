@@ -47,7 +47,7 @@ systemctl enable fstrim.timer   # Manutenção de SSD
 # OBS.: a senha padrão será "admin", altere de preferência antes de executar o script
 
 useradd -m gabriel
-echo gabriel:admin | chpasswd
+echo user:admin | chpasswd
 echo "gabriel ALL=(ALL) ALL" >> /etc/sudoers
 
 # Habilitando o repositório multilib e permitindo múltiplos downloads
