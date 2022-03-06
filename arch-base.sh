@@ -38,15 +38,15 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Habilitando serivços
 
-systemctl enable NetworkManager # Gerenciador de internet
-systemctl enable bluetooth      # Gerenciador de bluetooth
-systemctl enable firewalld       # Firewall
-systemctl enable fstrim.timer   # Manutenção de SSD
+systemctl enable --now NetworkManager # Gerenciador de internet
+systemctl enable --now bluetooth      # Gerenciador de bluetooth
+systemctl enable --now firewalld       # Firewall
+systemctl enable --now fstrim.timer   # Manutenção de SSD
 
 # Criando usuário e tornando-o administrador do sistema
 # OBS.: a senha padrão será "admin", altere de preferência antes de executar o script
 
-useradd -m gabriel
+useradd -m user
 echo user:admin | chpasswd
 echo "user ALL=(ALL) ALL" >> /etc/sudoers
 
