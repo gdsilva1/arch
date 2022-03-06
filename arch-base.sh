@@ -60,7 +60,7 @@ echo "user ALL=(ALL) ALL" >> /etc/sudoers
 
 # Instalando softwares
 
-pacman -S --noconfirm firefox discord steam freecad inkscape nvidia nvidia-settings texlive-most tex-gyre-fonts neofetch
+# pacman -S --noconfirm firefox discord steam freecad inkscape nvidia nvidia-settings texlive-most tex-gyre-fonts neofetch
 
 # Instalando base-devel para ter acesso ao AUR
 
