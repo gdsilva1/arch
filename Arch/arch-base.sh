@@ -40,7 +40,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager # Gerenciador de internet
 systemctl enable bluetooth      # Gerenciador de bluetooth
-systemctl enable firewalld      # Firewall
+systemctl enable firewalld       # Firewall
 systemctl enable fstrim.timer   # Manutenção de SSD
 
 # Criando usuário e tornando-o administrador do sistema
@@ -48,15 +48,15 @@ systemctl enable fstrim.timer   # Manutenção de SSD
 
 useradd -m gabriel
 echo user:admin | chpasswd
-echo "gabriel ALL=(ALL) ALL" >> /etc/sudoers
+echo "user ALL=(ALL) ALL" >> /etc/sudoers
 
 # Habilitando o repositório multilib e permitindo múltiplos downloads
 
-#sed -i '33s/.//' /etc/pacman.conf
-#sed -i '37s/.//' /etc/pacman.conf
-#sed -i '93s/.//' /etc/pacman.conf
-#sed -i '94s/.//' /etc/pacman.conf
-#pacman -Syu --noconfirm
+# sed -i '33s/.//' /etc/pacman.conf
+# sed -i '37s/.//' /etc/pacman.conf
+# sed -i '93s/.//' /etc/pacman.conf
+# sed -i '94s/.//' /etc/pacman.conf
+# pacman -Syu --noconfirm
 
 # Instalando softwares
 
