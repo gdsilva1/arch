@@ -1,4 +1,4 @@
-# Scripts de configuração para Arch Linux
+# Script de configuração para Arch Linux
 
 Automatizando o processo de *configuração* descrito em https://wiki.archlinux.org/title/Installation_guide_(Português).
 
