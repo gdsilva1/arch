@@ -12,6 +12,7 @@ Automatizando o processo de *configuração* descrito em https://wiki.archlinux.
 
 Após isso, o sistema estará configurado. Note que:
 - nenhuma DE estará instalada;
+- o repositório para o MEGASync estar
 - o usuário padrão será *user*; e
 - a senha será ```admin```.
 
