@@ -2,9 +2,19 @@
 
 Automatizando o processo de *configuração* descrito em https://wiki.archlinux.org/title/Installation_guide_(Português).
 
-## Tutorial
+## Inicialização
 
-Este scritp está configurado para inicialização em UEFI. Para BIOS, é necessária a mudandça de acordo com as partições criadas (veja mais em: https://wiki.archlinux.org/title/GRUB_(Português))
+- Inicialização em UEFI:
+  - Não é necessária nenhuma configuração adicional.
+- Inicialização em BIOS:
+  - Caso a inicialização seja feita em BIOS, saiba como particionar os discos em:
+    - https://wiki.archlinux.org/title/Installation_guide_(Português)#Exemplos_de_layouts
+    - https://wiki.archlinux.org/title/Partitioning_(Português)#Exemplos_de_leiaute
+  - A configuração de incialização deverá ser configurada de forma alernativa, como mostra em:
+    - https://wiki.archlinux.org/title/GRUB_(Português)#Sistemas_BIOS
+  - Essencialmente, a mudança será no arquivo ```arch_base.sh``` na linha 36.
+
+## Tutorial
 
 1. Particione os discos, formate-os e instale o sistema base.
 2. Quando estiver dentro do sistema base, i.e., após o comando ```arch-chroot /mnt``` mencionado no guia de instalação, instale o pacote ```git``` e baixe este repositório.
