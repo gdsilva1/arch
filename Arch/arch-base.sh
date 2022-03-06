@@ -14,6 +14,11 @@ echo "127.0.0.1 localhost.localdomain localhost" >> /etc/hosts
 echo "::1 localhost.localdomain localhost" >> /etc/hosts
 echo "127.0.1.1 legion.localdomain legion" >> /etc/hosts
 
+# Configuração do pacman
+mv /etc/pacman.conf /etc/pacman.conf.backup
+cp pacman.conf /etc/
+pacman -Syu --noconfirm
+
 # Instalando pacotes necessários: 
 #   - inicialização do sistema (grub, efibootmgr, ntfs-3g, os-prober);
 #   - gerenciador de internet (networkmanager);
@@ -39,7 +44,7 @@ systemctl enable firewalld      # Firewall
 systemctl enable fstrim.timer   # Manutenção de SSD
 
 # Criando usuário e tornando-o administrador do sistema
-# OBS.: a senha padrão será "admin", a qual deverá ser alterada após a completa instalação do sistema
+# OBS.: a senha padrão será "admin", altere de preferência antes de executar o script
 
 useradd -m gabriel
 echo gabriel:admin | chpasswd
@@ -47,11 +52,11 @@ echo "gabriel ALL=(ALL) ALL" >> /etc/sudoers
 
 # Habilitando o repositório multilib e permitindo múltiplos downloads
 
-sed -i '33s/.//' /etc/pacman.conf
-sed -i '37s/.//' /etc/pacman.conf
-sed -i '93s/.//' /etc/pacman.conf
-sed -i '94s/.//' /etc/pacman.conf
-pacman -Syu --noconfirm
+#sed -i '33s/.//' /etc/pacman.conf
+#sed -i '37s/.//' /etc/pacman.conf
+#sed -i '93s/.//' /etc/pacman.conf
+#sed -i '94s/.//' /etc/pacman.conf
+#pacman -Syu --noconfirm
 
 # Instalando softwares
 
