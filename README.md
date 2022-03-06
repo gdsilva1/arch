@@ -1,15 +1,13 @@
-# Scripts para instalação/pós-instalação de sistemas Linux
+# Scripts de configuração para Arch Linux
 
-Scripts para automatizar a instalação (ou pós-instalação de determinados sistemas Linux)
+Automatizando o processo de configuração descrito em https://wiki.archlinux.org/title/Installation_guide_(Português).
 
-## Arch Linux
+## Tutorial
 
-O script arch_gnome.sh configura e instala a interface gráfica GNOME, bem como aplicativos do dia-a-dia.
+1. Particione os discos, formate-os e instale o sistema base.
+2. Quando estiver dentro do sistema base, i.e., após o comando ```arch-chroot /mnt``` mencionado no guia de instalação, instale o pacote ```git``` e baixe este repositório.
+3. Se necessário, configure o arquivo ```arch_base.sh``` e ```pacman.conf``` (necessário um editor de texto via terminal como vim ou nano).
+4. Torne o scrip executavel com o comando ```chmod +x arch_Base.sh```.
+5. Rode o scritp com o comando ```./arch_base.sh```
 
-## Fedora
-
-O script fedora_sudo.sh instala repositórios adicionais (RPM Fusion), adiciona o repositório do Flathub (fedora_user.sh) e instala pacotes do dia-a-dia.
-
-## Debian
-
-Não concluído ainda
+Após isso, o sistema estará configurado. Note que nenhuma DE estará instalada.
