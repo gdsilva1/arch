@@ -4,6 +4,8 @@ Automatizando o processo de *configuração* descrito em https://wiki.archlinux.
 
 ## Tutorial
 
+Este scritp está configurado para inicialização em UEFI. Para BIOS, é necessária a mudandça de acordo com as partições criadas (veja mais em: https://wiki.archlinux.org/title/GRUB_(Português))
+
 1. Particione os discos, formate-os e instale o sistema base.
 2. Quando estiver dentro do sistema base, i.e., após o comando ```arch-chroot /mnt``` mencionado no guia de instalação, instale o pacote ```git``` e baixe este repositório.
 3. Se necessário, configure o arquivo ```arch_base.sh``` e ```pacman.conf``` (necessário um editor de texto via terminal como vim ou nano).
@@ -12,7 +14,6 @@ Automatizando o processo de *configuração* descrito em https://wiki.archlinux.
 
 Após isso, o sistema estará configurado. Note que:
 - nenhuma DE estará instalada;
-- o repositório para o MEGASync estar
 - o usuário padrão será *user*; e
 - a senha será ```admin```.
 
