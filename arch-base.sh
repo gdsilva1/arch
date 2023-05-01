@@ -4,8 +4,8 @@
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
-sed -i '178s/.//' /etc/locale.gen
-sed -i '394s/.//' /etc/locale.gen
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "pt_BR.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
@@ -28,8 +28,9 @@ pacman -Syu --noconfirm
 #   - administrador do sistema (sudo);
 #   - editor de texto via terminal (nano);
 #   - atualização de microcódigo (intel-ucode ou amd-ucode).
+#   - global menu GTK e Electron (libdbusmenu-glib appmenu-gtk-module)
 
-pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils pulseaudio-bluetooth firewalld zsh sudo nano intel-ucode 
+pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils pulseaudio-bluetooth firewalld zsh sudo nano intel-ucode libdbusmenu-glib appmenu-gtk-module
 
 # Instalando e configurando a incialização do sistema
 
@@ -47,16 +48,8 @@ systemctl enable --now fstrim.timer   # Manutenção de SSD
 # OBS.: a senha padrão será "admin", altere de preferência antes de executar o script
 
 useradd -m user
-echo user:admin | chpasswd
+echo user:admin | chpasswd 
 echo "user ALL=(ALL) ALL" >> /etc/sudoers
-
-# Habilitando o repositório multilib e permitindo múltiplos downloads
-
-# sed -i '33s/.//' /etc/pacman.conf
-# sed -i '37s/.//' /etc/pacman.conf
-# sed -i '93s/.//' /etc/pacman.conf
-# sed -i '94s/.//' /etc/pacman.conf
-# pacman -Syu --noconfirm
 
 # Instalando softwares
 
