@@ -59,11 +59,3 @@ echo "user ALL=(ALL) ALL" >> /etc/sudoers
 
 pacman -S --needed --noconfirm base-devel
 
-git clone https://aur.archlinux.org/yay.git
-cd yay/
-makepkg -si
-
-yay
-
-yay -S spotify visual-studio-code-bin
-
