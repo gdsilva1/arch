@@ -30,7 +30,7 @@ pacman -Syu --noconfirm
 #   - atualização de microcódigo (intel-ucode ou amd-ucode).
 #   - global menu GTK e Electron (libdbusmenu-glib appmenu-gtk-module)
 
-pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils pulseaudio-bluetooth firewalld zsh sudo nano intel-ucode
+pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils pulseaudio-bluetooth firewalld fish sudo nano intel-ucode
 
 # Instalando e configurando a incialização do sistema
 
