@@ -53,7 +53,7 @@ echo "user ALL=(ALL) ALL" >> /etc/sudoers
 
 # Instalando softwares
 
-# pacman -S --noconfirm firefox steam inkscape nvidia nvidia-settings neofetch terminus-font
+pacman -S --noconfirm firefox steam inkscape nvidia nvidia-settings neofetch terminus-font
 
 # Instalando base-devel para ter acesso ao AUR
 
