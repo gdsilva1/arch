@@ -30,19 +30,19 @@ pacman -Syu --noconfirm
 #   - atualização de microcódigo (intel-ucode ou amd-ucode).
 #   - global menu GTK e Electron (libdbusmenu-glib appmenu-gtk-module)
 
-pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils pulseaudio-bluetooth firewalld zsh sudo nano intel-ucode libdbusmenu-glib appmenu-gtk-module
+pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils pulseaudio-bluetooth firewalld zsh sudo nano intel-ucode
 
 # Instalando e configurando a incialização do sistema
 
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --recheck
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Habilitando serivços
 
-systemctl enable --now NetworkManager # Gerenciador de internet
-systemctl enable --now bluetooth      # Gerenciador de bluetooth
-systemctl enable --now firewalld       # Firewall
-systemctl enable --now fstrim.timer   # Manutenção de SSD
+# systemctl enable --now NetworkManager # Gerenciador de internet
+# systemctl enable --now bluetooth      # Gerenciador de bluetooth
+# systemctl enable --now firewalld      # Firewall
+# systemctl enable --now fstrim.timer   # Manutenção de SSD
 
 # Criando usuário e tornando-o administrador do sistema
 # OBS.: a senha padrão será "admin", altere de preferência antes de executar o script
@@ -53,8 +53,17 @@ echo "user ALL=(ALL) ALL" >> /etc/sudoers
 
 # Instalando softwares
 
-# pacman -S --noconfirm firefox discord steam freecad inkscape nvidia nvidia-settings texlive-most tex-gyre-fonts neofetch
+# pacman -S --noconfirm firefox steam inkscape nvidia nvidia-settings neofetch terminus-font
 
 # Instalando base-devel para ter acesso ao AUR
 
 pacman -S --needed --noconfirm base-devel
+
+git clone https://aur.archlinux.org/yay.git
+cd yay/
+makepkg -si
+
+yay
+
+yay -S spotify visual-studio-code-bin
+
