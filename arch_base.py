@@ -1,6 +1,6 @@
 import os
 import shutil
-from getpass import getpass
+import getpass
 
 # Basic configuration
 os.system("ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime")
@@ -40,7 +40,7 @@ os.system("grub-mkconfig -o /boot/grub/grub.cfg")
 
 # User configuration
 user = input("Username: ")
-password = getpass("Password: ")
+password = getpass.getpass("Password: ")
 
 os.system(f"useradd -m {user}")
 os.system(F"{user}:{password} | chpasswd")
