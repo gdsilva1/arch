@@ -28,7 +28,7 @@ with open("/etc/hosts", "a") as file:
 
 # Pacman configuration
 shutil.move("/etc/pacman.conf", "/etc/pacman.conf.backup")
-shutil.copyfile("./pacman.conf", "/etc/")
+shutil.copy("./pacman.conf", "/etc/")
 os.system("pacman -Syu --noconfirm")
 
 # Essential packages
