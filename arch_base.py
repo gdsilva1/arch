@@ -2,7 +2,13 @@ import os
 import shutil
 import getpass
 
+def statement(t):
+    print(t)
+    print("-"*len(t))
+    input("Pressione qualquer tecla para continuar...")
+
 # Basic configuration
+statement("Iniciando as configurações básicas do sistema.")
 os.system("ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime")
 os.system("hwclock --systohc")
 
@@ -27,18 +33,21 @@ with open("/etc/hosts", "a") as file:
     file.write("127.0.1.1 arch.localdomain arch")
 
 # Pacman configuration
+statement("Configurando o pacman.")
 shutil.move("/etc/pacman.conf", "/etc/pacman.conf.backup")
 shutil.copy("./pacman.conf", "/etc/")
 os.system("pacman -Syu --noconfirm")
 
 # Essential packages
-os.system("pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils pulseaudio-bluetooth firewalld fish sudo nano intel-ucode")
+statement("Instalando os principais pacotes e configurando o GRUB.")
+os.system("pacman -S --noconfirm grub efibootmgr ntfs-3g os-prober networkmanager bluez bluez-utils pulseaudio-bluetooth firewalld fish sudo intel-ucode")
 
 # Grub configuration
 os.system("grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch --recheck")
 os.system("grub-mkconfig -o /boot/grub/grub.cfg")
 
 # User configuration
+statement("Configurando o usuário.")
 user = input("Username: ")
 password = getpass.getpass("Password: ")
 
@@ -49,7 +58,9 @@ with open("/etc/sudoers", "a") as file:
     file.write(f"{user} ALL=(ALL) ALL")
 
 # Usefull packages
-os.system("pacman -S --noconfirm firefox steam inkscape nvidia nvidia-settings neofetch terminus-font")
+statement("Pacotes adicionais")
+os.system("pacman -S --noconfirm firefox steam inkscape nvidia nvidia-settings")
 
 # Base-devel to AUR acess
+statement("AUR")
 os.system("pacman -S --needed --noconfirm base-devel")
